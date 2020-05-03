@@ -1,16 +1,39 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11134" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3mp-fW-waa">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16096" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3mp-fW-waa">
+    <device id="watch38"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11055"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--Home Hostring Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <hostingController id="3mp-fW-waa" customClass="HostingController"
-                customModuleProvider="target"/>
+                <hostingController id="3mp-fW-waa" customClass="HomeHostringController" customModule="DailyCalendar_WatchKit_App" customModuleProvider="target">
+                    <connections>
+                        <segue destination="U0i-rI-dnc" kind="relationship" relationship="nextPage" id="dqw-XI-PHu"/>
+                    </connections>
+                </hostingController>
             </objects>
+            <point key="canvasLocation" x="-58" y="31"/>
+        </scene>
+        <!--Goals Hosting Controller-->
+        <scene sceneID="hjm-Tm-8yK">
+            <objects>
+                <hostingController id="KRs-Qj-s9b" customClass="GoalsHostingController" customModule="DailyCalendar_WatchKit_Extension"/>
+            </objects>
+            <point key="canvasLocation" x="633" y="31"/>
+        </scene>
+        <!--Calendar Summary Hosting Controller-->
+        <scene sceneID="u0w-At-TNL">
+            <objects>
+                <hostingController id="U0i-rI-dnc" customClass="CalendarSummaryHostingController" customModule="DailyCalendar_WatchKit_Extension">
+                    <connections>
+                        <segue destination="KRs-Qj-s9b" kind="relationship" relationship="nextPage" id="Tvu-2Z-PBn"/>
+                    </connections>
+                </hostingController>
+            </objects>
+            <point key="canvasLocation" x="293" y="31"/>
         </scene>
     </scenes>
 </document>
